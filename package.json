@@ -12,7 +12,11 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-router-dom": "^4.3.1",
+<<<<<<< HEAD
     "react-scripts": "^3.4.3"
+=======
+    "react-scripts": "2.1.4"
+>>>>>>> me-checkpoint-3
   },
   "scripts": {
     "start": "react-scripts start",
