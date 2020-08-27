@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Hyph } from '../Utils/Utils'
 import TokenService from '../../services/token-service'
+import IdleService from '../../services/idle-service'
 import './Header.css'
 
 export default class Header extends Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        /* when logging out, the callbacks to the refresh api and idle auto logout */
+        TokenService.clearCallbackBeforeExpiry()
+        IdleService.unRegisterIdleResets()
     }
 
     renderLogoutLink() {
@@ -17,7 +21,7 @@ export default class Header extends Component {
                     onClick={this.handleLogoutClick}
                     to='/'>
                     Logout
-        </Link>
+                </Link>
             </div>
         )
     }
@@ -28,12 +32,12 @@ export default class Header extends Component {
                 <Link
                     to='/register'>
                     Register
-        </Link>
+        <       /Link>
                 <Hyph />
                 <Link
                     to='/login'>
                     Log in
-        </Link>
+                </Link>
             </div>
         )
     }
@@ -45,8 +49,8 @@ export default class Header extends Component {
                     <Link to='/'>
                         <FontAwesomeIcon className='green' icon='frog' />
                         {' '}
-            Blogful Client
-          </Link>
+                        Blogful Client
+                    </Link>
                 </h1>
                 {TokenService.hasAuthToken()
                     ? this.renderLogoutLink()

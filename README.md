@@ -42,6 +42,9 @@ src: https://courses.thinkful.com/auth-jwt-v1/checkpoint/7
 
 branch: **`me-checkpoint-7`**
 
+Re: https://courses.thinkful.com/auth-jwt-v1/checkpoint/7#client-side-refresh-tokens
+Changes made to enable client side refresh of tokens —— considering the scenarios of user being idle or active —— was directly cribbed from https://github.com/Thinkful-Ed/blogful-client/compare/user-registration...expiry-time-and-refresh
+
 <br />
 
 
